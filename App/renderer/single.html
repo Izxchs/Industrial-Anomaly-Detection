@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Single Image Detection</title>
+  <link rel="stylesheet" href="single.css">
+</head>
+<body>
+
+<div class="app-title-bar">
+  <span class="app-title">Single Image Detection</span>
+  <button class="back-btn" onclick="goBack()">← Back</button>
+</div>
+
+<div class="single-container">
+
+  <div class="upload-box" id="uploadBox"
+       onclick="triggerSelect()"
+       ondragover="onDragOver(event)"
+       ondrop="onDrop(event)">
+    <p id="uploadText">Click or Drop Image Here</p>
+    <img id="previewImage" class="preview-img" style="display:none;">
+    <input type="file" id="fileInput" accept="image/*" hidden>
+  </div>
+
+  <button id="analyzeBtn" class="action-btn" disabled>Analyze</button>
+
+  <div id="resultBox" class="result-box">
+    <p id="resultLabel">Result: --</p>
+    <p id="resultScore">Score: --</p>
+  </div>
+
+</div>
+
+<script src="single.js"></script>
+</body>
+</html>

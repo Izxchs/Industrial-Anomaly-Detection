@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Detection</title>
+  <link rel="stylesheet" href="live.css">
+</head>
+<body>
+
+<div class="app-title-bar">
+  <span class="app-title">Live Detection</span>
+  <button class="back-btn" onclick="goBack()">← Back</button>
+</div>
+
+<div class="live-container">
+  
+  <!-- Video section -->
+  <div class="video-box">
+    <video id="camera" autoplay playsinline></video>
+    <div id="result-overlay">...</div>
+  </div>
+
+  <!-- Info section -->
+  <div class="info-box">
+    <h2 id="liveModelName">MODEL</h2>
+    <p><strong>Model:</strong> <span id="liveModelType"></span></p>
+    <p><strong>Threshold:</strong> <span id="thresholdValue">0.7</span></p>
+
+    <button id="startBtn" class="action-btn">Start Detection</button>
+    <button id="stopBtn" class="stop-btn" disabled>Stop</button>
+  </div>
+
+</div>
+
+<script src="live.js"></script>
+</body>
+</html>

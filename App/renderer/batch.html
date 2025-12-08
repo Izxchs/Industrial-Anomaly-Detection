@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Batch Image Analysis</title>
+  <link rel="stylesheet" href="batch.css" />
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="app-title-bar">
+    <span class="app-title">Batch Image Analysis</span>
+    <button class="back-btn" onclick="goBack()">← Back</button>
+    </div>
+
+
+  <!-- Controls -->
+  <div class="batch-controls">
+    <button class="primary-btn" onclick="triggerFolderSelect()">Select Folder</button>
+    <span id="folderName" class="folder-name">No folder selected</span>
+  </div>
+
+  <!-- Hidden input for folder selection -->
+  <input
+    id="folderInput"
+    type="file"
+    webkitdirectory
+    directory
+    multiple
+    style="display: none"
+  />
+
+  <!-- Progress -->
+  <div id="progressBox" class="progress-box hidden">
+    <div id="progressText">0 / 0</div>
+    <div class="progress-bar-bg">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Summary Table -->
+  <table id="resultsTable" class="results-table hidden">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Status</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Result Cards Grid -->
+  <div id="resultsContainer" class="results-grid"></div>
+
+  <script src="batch.js"></script>
+</body>
+</html>

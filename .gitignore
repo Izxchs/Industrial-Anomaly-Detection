@@ -1,0 +1,15 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+# Ignore Useless folder
+additionalStuff/
+backend/cache/
+models/
+
+# OS-generated files
+.DS_Store
+Thumbs.db

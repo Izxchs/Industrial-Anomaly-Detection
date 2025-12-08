@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Detection Mode</title>
+  <link rel="stylesheet" href="mode.css">
+</head>
+<body>
+
+<div class="app-title-bar">
+  <span class="app-title">Detection Mode Selection</span>
+  <button class="back-btn" onclick="goBack()">← Back</button>
+</div>
+
+<div class="split-container">
+
+  <!-- LEFT: MODEL PREVIEW -->
+  <div class="model-info">
+    <img id="modelImage" class="model-preview" src="assets/placeholder.png">
+    
+    <div class="model-details">
+      <h2 id="modelName">MODEL</h2>
+      <p><strong>Model Type:</strong> <span id="modelType"></span></p>
+
+      <!-- Threshold Control -->
+      <div class="threshold-control">
+        <label>Threshold: <span id="thresholdValue">0.7</span></label>
+        <input type="range" id="thresholdSlider" min="0" max="1" step="0.01" value="0.7">
+        <p class="threshold-hint">(Recommended: 0.7)</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RIGHT: AVAILABLE MODES -->
+  <div class="mode-selection">
+    <button class="mode-btn" onclick="goLive()">Live Detection</button>
+    <button class="mode-btn" onclick="goBatch()">Folder Detection</button>
+    <button class="mode-btn" onclick="goSingle()">Single Image</button>
+  </div>
+
+</div>
+
+<script src="mode.js"></script>
+</body>
+</html>

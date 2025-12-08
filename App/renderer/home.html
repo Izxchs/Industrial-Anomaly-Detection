@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anomaly Detection System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app-title-bar">
+  <span class="app-title">Anomaly Detection System</span>
+  <button class="add-model-btn" onclick="openAddModel()">Add Model</button>
+</div>
+
+<div id="itemContainer" class="grid"></div>
+
+<!-- Add Model Modal -->
+<div id="addModelModal">
+  <div class="modal-content">
+    <h3>Add New Model</h3>
+
+    <input type="text" id="modelName" style="width: 380px;" placeholder="Item Name (e.g. transistor)" />
+
+    <label>PaDiM Model Files</label>
+    <button onclick="selectFile('padimXml')">Select PaDiM XML</button>
+    <div id="padimXmlLabel" class="file-label"></div>
+
+    <button onclick="selectFile('padimBin')">Select PaDiM BIN</button>
+    <div id="padimBinLabel" class="file-label"></div>
+
+    <label>PatchCore Model Files</label>
+    <button onclick="selectFile('pcXml')">Select PatchCore XML</button>
+    <div id="pcXmlLabel" class="file-label"></div>
+
+    <button onclick="selectFile('pcBin')">Select PatchCore BIN</button>
+    <div id="pcBinLabel" class="file-label"></div>
+
+    <label>Item Preview Image</label>
+    <button onclick="selectFile('itemImage')">Select Image</button>
+    <div id="itemImageLabel" class="file-label"></div>
+
+    <div class="modal-actions">
+      <button onclick="submitModel()">Save</button>
+      <button class="back" onclick="closeAddModel()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Model Confirmation Modal -->
+<div id="deleteModelModal">
+  <div class="modal-content delete-modal">
+    <h3>Delete Model</h3>
+    <p>This will remove the model permanently.</p>
+    <div class="modal-actions">
+      <button id="confirmDeleteBtn">Delete</button>
+      <button class="back" onclick="closeDeleteModel()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="home.js"></script>
+
+</body>
+</html>
